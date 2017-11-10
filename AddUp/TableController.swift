@@ -31,17 +31,17 @@ class TableController: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundColor = UIColor.clear
         return Singleton.sharedInstance.arrayOfItems.count
+        
     }
     
     //# MARK: - tableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.default, reuseIdentifier:"cell")
         cell.textLabel!.text = String(format: "$%.2f", Singleton.sharedInstance.arrayOfItems[indexPath.row])
-        
-        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.textColor = UIColor(red: 0.51, green: 0, blue: 0, alpha: 1.0)// Colleur da FONT
         cell.backgroundColor = UIColor.clear
-        cell.textLabel?.font = UIFont(name: "MetroBold", size: 32)
-        
+        cell.textLabel?.font = UIFont(name: "Angeline Vintage_Demo.ttf", size: 32)
+        //tableView.separatorStyle = .none // Remove the lines from table view
         return cell
     }
     
@@ -78,9 +78,9 @@ class TableController: UIViewController, UITableViewDelegate, UITableViewDataSou
     //# MARK: - pickerView
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let pickerLabel = UILabel()
-        pickerLabel.textColor = UIColor.white
+        pickerLabel.textColor = UIColor(red: 0.51, green: 0, blue: 0, alpha: 1.0)
         pickerLabel.text = data[row]
-        pickerLabel.font = UIFont(name: "MetroBold", size: 24)
+        pickerLabel.font = UIFont(name: "Angeline Vintage_Demo.otf", size: 24)
         pickerLabel.textAlignment = NSTextAlignment.center
         return pickerLabel
     }
